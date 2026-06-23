@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Interactive Chat CTA</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  min-height: 200vh;
+}
+
+.page-content {
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+.page-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.page-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.chat-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #085482;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
+  /* Always reserve space for focus ring so layout doesn't shift */
+  outline: none;
+  box-shadow: 0 0 0 0px transparent;
+}
+
+.chat-button:hover {
+  background: #06476F;
+}
+
+.chat-button:active {
+  background: #043754;
+}
+
+/* Focus ring — always show on focus, not just keyboard */
+.chat-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #0062D3;
+}
+
+.chat-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.chat-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .chat-button {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 68px;
+    height: 68px;
+    min-height: 68px;
+    padding: 0;
+    border-radius: 50%;
+    gap: 0;
+    z-index: 9999;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .chat-text {
+    display: none;
+  }
+
+  .chat-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+#embeddedMessagingConversationButton,
+.embeddedMessagingConversationButtonWrapper {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+#embeddedMessagingFrame.isMinimized {
+  display: none !important;
+  pointer-events: none !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-content">
+  <h1>Healthcare Support CTA</h1>
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+</div>
+
+<a href="#" class="chat-button" aria-label="Chat now">
+  <svg class="chat-icon" aria-hidden="true" width="47" height="38" viewBox="0 0 47 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.58887 3.58887V25.1222H8.07498V30.9542C8.07498 31.4028 8.34415 31.7617 8.70304 31.9411C8.79276 32.0308 8.97221 32.0309 9.15165 32.0309C9.42082 32.0309 9.68999 31.9411 9.86943 31.7617L16.5089 25.1222H32.3V3.58887H3.58887ZM30.5056 23.3278H15.7911L9.86943 29.2495V23.3278H5.38331V5.38331H30.5056V23.3278ZM17.9444 16.5089L16.6883 15.2528L17.9444 13.9967L19.2006 15.2528L17.9444 16.5089ZM22.4306 16.5089L21.1744 15.2528L22.4306 13.9967L23.6867 15.2528L22.4306 16.5089ZM13.2789 16.5089L12.0228 15.2528L13.2789 13.9967L14.535 15.2528L13.2789 16.5089Z" fill="white"/>
+    <mask id="mask0_579_66197" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="16" y="8" width="31" height="30">
+      <path d="M43.4888 11.3999V29.1333H39.7943V33.936C39.7943 34.3055 39.5727 34.601 39.2771 34.7488C39.2032 34.8227 39.0554 34.8227 38.9077 34.8227C38.686 34.8227 38.4643 34.7488 38.3165 34.601L32.8488 29.1333H19.8443V11.3999H43.4888ZM21.3221 27.6555H33.4399L38.3165 32.5322V27.6555H42.011V12.8777H21.3221V27.6555ZM31.6665 22.0399L32.701 21.0055L31.6665 19.971L30.6321 21.0055L31.6665 22.0399ZM27.9721 22.0399L29.0065 21.0055L27.9721 19.971L26.9376 21.0055L27.9721 22.0399ZM35.5088 22.0399L36.5432 21.0055L35.5088 19.971L34.4743 21.0055L35.5088 22.0399Z" fill="white"/>
+    </mask>
+    <g mask="url(#mask0_579_66197)">
+      <path d="M43.2773 34.834H33.7773V34.833H20.0557V26.3887H33.7773V11.6113H43.2773V34.834Z" fill="white"/>
+    </g>
+  </svg>
+  <span class="chat-text">Chat now</span>
+</a>
+
+<script>
+(function () {
+
+  function showCustomBtn() {
+    const btn = document.querySelector('.chat-button');
+    if (btn) btn.style.display = 'inline-flex';
+  }
+
+  function hideCustomBtn() {
+    const btn = document.querySelector('.chat-button');
+    if (btn) btn.style.display = 'none';
+  }
+
+  const chatBtn = document.querySelector('.chat-button');
+  chatBtn.style.display = 'none';
+
+  chatBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    openEmbeddedChat();
+  });
+
+  window.addEventListener('onEmbeddedMessagingWindowMinimized', showCustomBtn);
+  window.addEventListener('onEmbeddedMessagingWindowClosed', showCustomBtn);
+  window.addEventListener('onEmbeddedMessagingWindowMaximized', hideCustomBtn);
+  window.addEventListener('onEmbeddedMessagingReady', showCustomBtn);
+
+  function openEmbeddedChat() {
+    embeddedservice_bootstrap.utilAPI.launchChat();
+    hideCustomBtn();
+  }
+
+  function startCxoneChat(firstName, transcriptId, skillId) {
+    (function (n, u) {
+      window.CXoneDfo = n,
+        window[n] = window[n] || function () {
+          (window[n].q = window[n].q || []).push(arguments)
+        }, window[n].u = u,
+        e = document.createElement("script"), e.type = "module", e.src = u + "?" + Math.round(Date.now() / 1e3 / 3600),
+        document.head.appendChild(e)
+    })('cxone', 'https://web-modules-de-uk1.niceincontact.com/loader/1/loader.js');
+
+    cxone('init', '1152');
+    cxone('chat', 'init', 1152, 'chat_77cdeb00-0c80-41cb-874b-0e7df1067e0c');
+    cxone('chat', 'setCustomerName', firstName);
+    cxone('chat', 'setCustomField', 'nuffskill', skillId);
+    cxone('chat', 'setCustomField', 'sfticketid', transcriptId);
+    cxone('chat', 'setCustomField', 'sftranscriptid', transcriptId);
+    cxone('chat', 'sendFirstMessageAutomatically', 'Welcome to Nuffield Support. How can I help you?');
+    cxone('chat', 'setCustomCss', '[data-selector-item="START_NEW_CHAT"] {display: none !important;};');
+    cxone('chat', 'chat', 'hideSystemMessages');
+    cxone('chat', 'hideSendTranscript');
+    cxone('chat', 'enableChatAlwaysOnline');
+    cxone('chat', 'hidePreSurvey');
+    cxone('chat', 'openChatWindow');
+    cxone('chat', 'autoStartSession');
+  }
+
+  function getSkillId(messageText) {
+    const text = messageText.toLowerCase();
+    if (text.includes('appointment cancellation')) return '31531982';
+    if (text.includes('appointment booking')) return '29204808';
+    return '29204809';
+  }
+
+  function initEmbeddedMessaging() {
+    let firstName = "";
+    let transcriptId = "";
+    let skillId = "";
+    try {
+      embeddedservice_bootstrap.settings.language = 'en_US';
+
+      window.addEventListener("onEmbeddedMessagingPreChatSubmitted", ({ detail }) => {
+        const { _firstName } = detail.prechatSubmitFields;
+        firstName = _firstName;
+      });
+
+      const IDLE_TIME = 5 * 60 * 1000;
+      let idleTimer = null;
+
+      window.addEventListener("onEmbeddedMessageSent", (event) => {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          embeddedservice_bootstrap.userVerificationAPI.clearSession(true);
+        }, IDLE_TIME);
+
+        const payload = JSON.parse(event.detail.conversationEntry.entryPayload);
+        const messageText = payload.abstractMessage?.staticContent?.text;
+
+        if (!transcriptId && messageText && messageText.toLowerCase().includes("your chat id")) {
+          const match = messageText.match(/Your chat ID is\s*([A-Za-z0-9-]+)/i);
+          if (match && match[1]) {
+            transcriptId = match[1].trim();
+          }
+        }
+
+        if (messageText.includes('Transferring the chat to a support executive')) {
+          skillId = getSkillId(messageText);
+          startCxoneChat(firstName, transcriptId, skillId);
+          setTimeout(() => {
+            embeddedservice_bootstrap.userVerificationAPI.clearSession(true);
+          }, 4000);
+        }
+      });
+
+      embeddedservice_bootstrap.init(
+        '00Dw0000000lVoz',
+        'Agentforce_Customer_Support',
+        'https://nuffieldhealth-crm.my.site.com/ESWAgentforceCustomerSu1777529445343',
+        {
+          scrt2URL: 'https://nuffieldhealth-crm.my.salesforce-scrt.com'
+        }
+      );
+    } catch (err) {
+      console.error('Error loading Embedded Messaging: ', err);
+    }
+  }
+
+  const sfScript = document.createElement('script');
+  sfScript.type = 'text/javascript';
+  sfScript.src = 'https://nuffieldhealth-crm.my.site.com/ESWAgentforceCustomerSu1777529445343/assets/js/bootstrap.min.js';
+  sfScript.onload = initEmbeddedMessaging;
+  document.body.appendChild(sfScript);
+
+})();
+</script>
+
+</body>
+</html>
